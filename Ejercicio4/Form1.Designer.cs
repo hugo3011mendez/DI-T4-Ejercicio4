@@ -48,6 +48,7 @@
             this.btnOperacion.TabIndex = 0;
             this.btnOperacion.Text = "=";
             this.btnOperacion.UseVisualStyleBackColor = true;
+            this.btnOperacion.Click += new System.EventHandler(this.btnOperacion_Click);
             // 
             // txtNum1
             // 

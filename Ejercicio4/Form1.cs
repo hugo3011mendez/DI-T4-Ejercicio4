@@ -85,5 +85,17 @@ namespace Ejercicio4
                 lblSigno.Text = "/";
             }
         }
+
+        private void btnOperacion_Click(object sender, EventArgs e)
+        {
+            if (seleccionada != null)
+            {
+                lblResultado.Text = seleccionada(Convert.ToDouble(txtNum1.Text), Convert.ToDouble(txtNum2.Text)).ToString();
+            }
+            else
+            {
+                
+            }
+        }
     }
 }
