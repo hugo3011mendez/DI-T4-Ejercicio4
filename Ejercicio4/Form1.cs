@@ -94,7 +94,7 @@ namespace Ejercicio4
             }
             else
             {
-                
+                MessageBox.Show("Tiene que indicar un tipo de operación!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
