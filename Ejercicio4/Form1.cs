@@ -56,7 +56,41 @@ namespace Ejercicio4
 
         public void pulsarRadioButton(object sender, EventArgs e)
         {
+            RadioButton seleccionado = (RadioButton)sender;
+            if (seleccionado.Checked == true) // Si el RadioButton pulsado se ha checkeado...
+            {
+                // Recorro la Hashtable 
+                foreach (DictionaryEntry de in operaciones)
+                {
+                    if (de.Key.ToString() == seleccionado.Text) // Si la entrada de la Hashtable tiene como clave el texto del RadioButton pulsado...
+                    {
+                        seleccionada = (Operacion)de.Value; // Guardo en el delegado seleccionada el valor de dicha entrada, que también es un delegado
+                    }
+                }
 
+                // Según el RadioButton que se haya seleccionado, establezco el signo de la operación
+                if (seleccionado.Text == "Suma")
+                {
+                    lblSigno.Text = "+";
+                }
+                else if (seleccionado.Text == "Resta")
+                {
+                    lblSigno.Text = "-";
+                }
+                else if (seleccionado.Text == "Multiplicación")
+                {
+                    lblSigno.Text = "X";
+                }
+                else if (seleccionado.Text == "División")
+                {
+                    lblSigno.Text = "/";
+                }
+            }
+            else
+            {
+                seleccionada = null; // Si se deselecciona el RadioButton, igualo el delegado seleccionada a null porque no hay ninguna función seleccionada
+                lblSigno.Text = ""; // Y quito el texto de la etiqueta que muestra el signo
+            }
         }
     }
 }

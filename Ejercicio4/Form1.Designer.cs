@@ -60,7 +60,7 @@
             // txtNum2
             // 
             this.txtNum2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.txtNum2.Location = new System.Drawing.Point(306, 60);
+            this.txtNum2.Location = new System.Drawing.Point(316, 60);
             this.txtNum2.Name = "txtNum2";
             this.txtNum2.Size = new System.Drawing.Size(132, 29);
             this.txtNum2.TabIndex = 2;
@@ -76,6 +76,7 @@
             this.rbSuma.TabStop = true;
             this.rbSuma.Text = "Suma";
             this.rbSuma.UseVisualStyleBackColor = true;
+            this.rbSuma.Click += new System.EventHandler(this.pulsarRadioButton);
             // 
             // rbResta
             // 
@@ -88,6 +89,7 @@
             this.rbResta.TabStop = true;
             this.rbResta.Text = "Resta";
             this.rbResta.UseVisualStyleBackColor = true;
+            this.rbResta.Click += new System.EventHandler(this.pulsarRadioButton);
             // 
             // rbMultiplicacion
             // 
@@ -100,6 +102,7 @@
             this.rbMultiplicacion.TabStop = true;
             this.rbMultiplicacion.Text = "Multiplicación";
             this.rbMultiplicacion.UseVisualStyleBackColor = true;
+            this.rbMultiplicacion.Click += new System.EventHandler(this.pulsarRadioButton);
             // 
             // rbDivision
             // 
@@ -112,12 +115,13 @@
             this.rbDivision.TabStop = true;
             this.rbDivision.Text = "División";
             this.rbDivision.UseVisualStyleBackColor = true;
+            this.rbDivision.Click += new System.EventHandler(this.pulsarRadioButton);
             // 
             // lblSigno
             // 
             this.lblSigno.AutoSize = true;
             this.lblSigno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.lblSigno.Location = new System.Drawing.Point(229, 63);
+            this.lblSigno.Location = new System.Drawing.Point(251, 63);
             this.lblSigno.Name = "lblSigno";
             this.lblSigno.Size = new System.Drawing.Size(59, 24);
             this.lblSigno.TabIndex = 7;
