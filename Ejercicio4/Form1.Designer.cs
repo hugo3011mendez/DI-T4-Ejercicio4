@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnOperacion = new System.Windows.Forms.Button();
             this.txtNum1 = new System.Windows.Forms.TextBox();
             this.txtNum2 = new System.Windows.Forms.TextBox();
@@ -77,6 +78,7 @@
             this.rbSuma.Size = new System.Drawing.Size(69, 24);
             this.rbSuma.TabIndex = 3;
             this.rbSuma.TabStop = true;
+            this.rbSuma.Tag = "+";
             this.rbSuma.Text = "Suma";
             this.rbSuma.UseVisualStyleBackColor = true;
             this.rbSuma.Click += new System.EventHandler(this.pulsarRadioButton);
@@ -90,6 +92,7 @@
             this.rbResta.Size = new System.Drawing.Size(70, 24);
             this.rbResta.TabIndex = 4;
             this.rbResta.TabStop = true;
+            this.rbResta.Tag = "-";
             this.rbResta.Text = "Resta";
             this.rbResta.UseVisualStyleBackColor = true;
             this.rbResta.Click += new System.EventHandler(this.pulsarRadioButton);
@@ -103,6 +106,7 @@
             this.rbMultiplicacion.Size = new System.Drawing.Size(121, 24);
             this.rbMultiplicacion.TabIndex = 5;
             this.rbMultiplicacion.TabStop = true;
+            this.rbMultiplicacion.Tag = "X";
             this.rbMultiplicacion.Text = "Multiplicación";
             this.rbMultiplicacion.UseVisualStyleBackColor = true;
             this.rbMultiplicacion.Click += new System.EventHandler(this.pulsarRadioButton);
@@ -116,6 +120,7 @@
             this.rbDivision.Size = new System.Drawing.Size(81, 24);
             this.rbDivision.TabIndex = 6;
             this.rbDivision.TabStop = true;
+            this.rbDivision.Tag = "/";
             this.rbDivision.Text = "División";
             this.rbDivision.UseVisualStyleBackColor = true;
             this.rbDivision.Click += new System.EventHandler(this.pulsarRadioButton);
@@ -148,6 +153,7 @@
             // 
             // Form1
             // 
+            this.AcceptButton = this.btnOperacion;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 225);
@@ -160,6 +166,7 @@
             this.Controls.Add(this.txtNum2);
             this.Controls.Add(this.txtNum1);
             this.Controls.Add(this.btnOperacion);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);

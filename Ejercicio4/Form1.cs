@@ -21,28 +21,7 @@ namespace Ejercicio4
         public delegate double Operacion(double num1, double num2);
         Hashtable operaciones = new Hashtable();
 
-        // Procedo a crear los diferentes delegados Operacion con funciones lambda indicando cada operación aritmética necesaria :
-        Operacion suma = new Operacion((num1, num2) =>
-        {
-            return num1 + num2;
-        });
-
-        Operacion resta = new Operacion((num1, num2) =>
-        {
-            return num1 - num2;
-        });
-
-        Operacion multiplicacion = new Operacion((num1, num2) =>
-        {
-            return num1 * num2;
-        });
-
-        Operacion division = new Operacion((num1, num2) =>
-        {
-            return num1 / num2;
-        });
-
-        Operacion seleccionada;
+        Operacion seleccionada; // Creo una variable de tipo delegado para guardar la operación seleccionada 
 
         public Form1()
         {
@@ -52,44 +31,25 @@ namespace Ejercicio4
             lblResultado.Text = "";
 
             // Añado los delegados a la Hashtable
-            operaciones.Add("Suma", suma);
-            operaciones.Add("Resta", resta);
-            operaciones.Add("Multiplicación", multiplicacion);
-            operaciones.Add("División", division);
+            operaciones.Add("Suma", new Operacion((num1, num2) => num1 + num2));
+            operaciones.Add("Resta", new Operacion((num1, num2) => num1 - num2));
+            operaciones.Add("Multiplicación", new Operacion((num1, num2) => num1 * num2));
+            operaciones.Add("División", new Operacion((num1, num2) => num1 / num2));
         }
 
+
+        // Función que gestiona las acciones a realizar cuando se pulsa un RadioButton
         public void pulsarRadioButton(object sender, EventArgs e)
         {
             RadioButton seleccionado = (RadioButton)sender;
 
-            // Recorro la Hashtable 
-            foreach (DictionaryEntry de in operaciones)
-            {
-                if (de.Key.ToString() == seleccionado.Text) // Si la entrada de la Hashtable tiene como clave el texto del RadioButton pulsado...
-                {
-                    seleccionada = (Operacion)de.Value; // Guardo en el delegado seleccionada el valor de dicha entrada, que también es un delegado
-                }
-            }
+            seleccionada = (Operacion)operaciones[seleccionado.Text]; // Guardo en seleccionada, el valor correspondiente a la clave igual al texto del RadioButton
 
-            // Según el RadioButton que se haya seleccionado, establezco el signo de la operación
-            if (seleccionado.Text == "Suma")
-            {
-                lblSigno.Text = "+";
-            }
-            else if (seleccionado.Text == "Resta")
-            {
-                lblSigno.Text = "-";
-            }
-            else if (seleccionado.Text == "Multiplicación")
-            {
-                lblSigno.Text = "X";
-            }
-            else if (seleccionado.Text == "División")
-            {
-                lblSigno.Text = "/";
-            }
+            lblSigno.Text = seleccionado.Tag.ToString(); // Establezco el label del signo al tag del RadioButton, que se corresponde con su signo
         }
+        
 
+        // Función que gestiona las acciones a realizar cuando se pulsa el botón de mostrar resultado
         private void btnOperacion_Click(object sender, EventArgs e)
         {
             try
@@ -109,6 +69,8 @@ namespace Ejercicio4
             }
         }
 
+
+        // Función que gestiona las acciones a realizar con cada tick del timer
         private void timer_Tick(object sender, EventArgs e)
         {
             segundos++;
