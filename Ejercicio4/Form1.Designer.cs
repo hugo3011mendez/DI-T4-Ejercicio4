@@ -72,7 +72,7 @@
             // 
             this.rbSuma.AutoSize = true;
             this.rbSuma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.rbSuma.Location = new System.Drawing.Point(47, 124);
+            this.rbSuma.Location = new System.Drawing.Point(177, 124);
             this.rbSuma.Name = "rbSuma";
             this.rbSuma.Size = new System.Drawing.Size(69, 24);
             this.rbSuma.TabIndex = 3;
@@ -85,7 +85,7 @@
             // 
             this.rbResta.AutoSize = true;
             this.rbResta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.rbResta.Location = new System.Drawing.Point(46, 170);
+            this.rbResta.Location = new System.Drawing.Point(176, 170);
             this.rbResta.Name = "rbResta";
             this.rbResta.Size = new System.Drawing.Size(70, 24);
             this.rbResta.TabIndex = 4;
@@ -98,7 +98,7 @@
             // 
             this.rbMultiplicacion.AutoSize = true;
             this.rbMultiplicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.rbMultiplicacion.Location = new System.Drawing.Point(143, 124);
+            this.rbMultiplicacion.Location = new System.Drawing.Point(327, 124);
             this.rbMultiplicacion.Name = "rbMultiplicacion";
             this.rbMultiplicacion.Size = new System.Drawing.Size(121, 24);
             this.rbMultiplicacion.TabIndex = 5;
@@ -111,7 +111,7 @@
             // 
             this.rbDivision.AutoSize = true;
             this.rbDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.rbDivision.Location = new System.Drawing.Point(143, 170);
+            this.rbDivision.Location = new System.Drawing.Point(327, 170);
             this.rbDivision.Name = "rbDivision";
             this.rbDivision.Size = new System.Drawing.Size(81, 24);
             this.rbDivision.TabIndex = 6;
@@ -150,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 225);
+            this.ClientSize = new System.Drawing.Size(760, 225);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.lblSigno);
             this.Controls.Add(this.rbDivision);
