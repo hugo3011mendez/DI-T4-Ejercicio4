@@ -13,6 +13,10 @@ namespace Ejercicio4
 {
     public partial class Form1 : Form
     {
+        // Creo variables que gestionarán el Timer
+        int minutos = 0;
+        int segundos = 0;
+
         // Creo y declaro el delegado y la Hashtable
         public delegate double Operacion(double num1, double num2);
         Hashtable operaciones = new Hashtable();
@@ -88,14 +92,34 @@ namespace Ejercicio4
 
         private void btnOperacion_Click(object sender, EventArgs e)
         {
-            if (seleccionada != null)
+            try
             {
-                lblResultado.Text = seleccionada(Convert.ToDouble(txtNum1.Text), Convert.ToDouble(txtNum2.Text)).ToString();
+                if (seleccionada != null)
+                {
+                    lblResultado.Text = seleccionada(Convert.ToDouble(txtNum1.Text), Convert.ToDouble(txtNum2.Text)).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Tiene que indicar un tipo de operación!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (FormatException)
             {
-                MessageBox.Show("Tiene que indicar un tipo de operación!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debes escribir números para operar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            segundos++;
+
+            if (segundos == 60)
+            {
+                segundos = 0;
+                minutos++;
+            }
+
+            Text = String.Format("{0:D2} : {1:D2}", minutos, segundos);
         }
     }
 }

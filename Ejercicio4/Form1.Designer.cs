@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnOperacion = new System.Windows.Forms.Button();
             this.txtNum1 = new System.Windows.Forms.TextBox();
             this.txtNum2 = new System.Windows.Forms.TextBox();
@@ -37,6 +38,7 @@
             this.rbDivision = new System.Windows.Forms.RadioButton();
             this.lblSigno = new System.Windows.Forms.Label();
             this.lblResultado = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnOperacion
@@ -138,6 +140,12 @@
             this.lblResultado.TabIndex = 8;
             this.lblResultado.Text = "Resultado";
             // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,6 +178,7 @@
         private System.Windows.Forms.RadioButton rbDivision;
         private System.Windows.Forms.Label lblSigno;
         private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.Timer timer;
     }
 }
 
